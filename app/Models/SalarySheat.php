@@ -5,15 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AgricultureExpert extends Model
+class SalarySheat extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'proffesion',
+    protected $guarded = [];
     
-    ];
 }

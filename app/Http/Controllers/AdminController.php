@@ -166,7 +166,7 @@ class AdminController extends Controller
             'alert-type' => 'success',
         ];
         return redirect()
-            ->route('CEO.showmember')
+            ->route('ceo.showregisteredemployee')
             ->with($notification);
     }
 

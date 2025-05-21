@@ -12,7 +12,7 @@
                     <div class="card-body">
                         <h6 class="card-title">Insert PayRoll Information Of Employee</h6>
 
-                        <form class="forms-sample" method="POST" action="{{ route('admin.updatemember') }}" enctype="multipart/form-data">
+                        <form class="forms-sample" method="POST" action="{{ route('cfo.calculatepayrole') }}" enctype="multipart/form-data">
                             @csrf	
                             <input type="hidden" name="id" value="{{ $types->id }}">
 
@@ -33,6 +33,21 @@
                             </div>
 
                             <div class="mb-3">
+                                <label class="form-label">Role</label>
+                                <input type="text" class="form-control @error('role') is-invalid @enderror" name="role" placeholder="role" value="{{ old('role', $types->role) }}">
+                                @error('role')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">employment_type</label>
+                                <input type="text" class="form-control @error('employment_type') is-invalid @enderror" name="employment_type" placeholder="employment_type" value="{{ old('employment_type', $types->employment_type) }}">
+                                @error('employment_type')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
                                 <label class="form-label">basic_salary</label>
                                 <input type="text" class="form-control @error('basic_salary') is-invalid @enderror" name="basic_salary" placeholder="basic_salary" value="{{ old('basic_salary', $types->basic_salary) }}">
                                 @error('basic_salary')
@@ -47,13 +62,11 @@
                                 @error('work_day')<div class="invalid-feedback">{{ $message }}</div>@enderror
                             </div>
 
-                            $earned_salary = 
-
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control @error('work_day') is-invalid @enderror" 
-                                    id="work_day" name="work_day" placeholder=" " value="{{ old('work_day') }}">
-                                <label for="work_day"><i class="fas fa-work_day me-2"></i>Work Day </label>
-                                @error('work_day')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                <input type="text" class="form-control @error('position_allowance') is-invalid @enderror" 
+                                    id="position_allowance" name="position_allowance" placeholder=" " value="{{ old('position_allowance') }}">
+                                <label for="position_allowance"><i class="fas fa-position_allowance me-2"></i>position_allowance </label>
+                                @error('position_allowance')<div class="invalid-feedback">{{ $message }}</div>@enderror
                             </div>
 
                             <div class="form-floating mb-3">
@@ -62,6 +75,7 @@
                                 <label for="transport_allowance"><i class="fas fa-transport_allowance me-2"></i>Transport Allowance </label>
                                 @error('transport_allowance')<div class="invalid-feedback">{{ $message }}</div>@enderror
                             </div>
+
 
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control @error('other_benefit') is-invalid @enderror" 

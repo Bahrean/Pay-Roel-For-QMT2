@@ -128,7 +128,7 @@
                            id="employment_date" name="employment_date" placeholder=" " value="{{ old('employment_date') }}">
                     <label for="employment_date"><i class="fas fa-employment_date me-2"></i>employment_date </label>
                     @error('employment_date')<div class="invalid-feedback">{{ $message }}</div>@enderror
-
+                </div>
                 
                 <div class="form-floating mb-3">
                     <input type="tel" class="form-control @error('bank_account_number') is-invalid @enderror" 

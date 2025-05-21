@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="card">
                     <div class="card-body">
-                        <h6 class="card-title">Insert PayRole Information Of Employee</h6>
+                        <h6 class="card-title">Insert PayRoll Information Of Employee</h6>
 
                         <form class="forms-sample" method="POST" action="{{ route('admin.updatemember') }}" enctype="multipart/form-data">
                             @csrf	
@@ -33,30 +33,55 @@
                             </div>
 
                             <div class="mb-3">
-                                <label class="form-label">Employment Date</label>
-                                <input type="text" class="form-control @error('employment_date') is-invalid @enderror" name="employment_date" placeholder="employment_date" value="{{ old('employment_date', $types->employment_date) }}">
-                                @error('employment_date')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-
-                            <div class="mb-3">
                                 <label class="form-label">basic_salary</label>
-                                <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" value="{{ old('password', $types->password) }}">
-                                @error('password')
+                                <input type="text" class="form-control @error('basic_salary') is-invalid @enderror" name="basic_salary" placeholder="basic_salary" value="{{ old('basic_salary', $types->basic_salary) }}">
+                                @error('basic_salary')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
 
-                            <div class="mb-3">
-                                <label class="form-label">Username</label>
-                                <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" placeholder="Username" value="{{ old('username', $types->username) }}">
-                                @error('username')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control @error('work_day') is-invalid @enderror" 
+                                    id="work_day" name="work_day" placeholder=" " value="{{ old('work_day') }}">
+                                <label for="work_day"><i class="fas fa-work_day me-2"></i>Work Day </label>
+                                @error('work_day')<div class="invalid-feedback">{{ $message }}</div>@enderror
                             </div>
 
-                            <div class="mb-3">
+                            $earned_salary = 
+
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control @error('work_day') is-invalid @enderror" 
+                                    id="work_day" name="work_day" placeholder=" " value="{{ old('work_day') }}">
+                                <label for="work_day"><i class="fas fa-work_day me-2"></i>Work Day </label>
+                                @error('work_day')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control @error('transport_allowance') is-invalid @enderror" 
+                                    id="transport_allowance" name="transport_allowance" placeholder=" " value="{{ old('transport_allowance') }}">
+                                <label for="transport_allowance"><i class="fas fa-transport_allowance me-2"></i>Transport Allowance </label>
+                                @error('transport_allowance')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control @error('other_benefit') is-invalid @enderror" 
+                                    id="other_benefit" name="other_benefit" placeholder=" " value="{{ old('other_benefit') }}">
+                                <label for="other_benefit"><i class="fas fa-other_benefit me-2"></i>Other Benefit </label>
+                                @error('other_benefit')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control @error('loan') is-invalid @enderror" 
+                                    id="loan" name="loan" placeholder=" " value="{{ old('loan') }}">
+                                <label for="loan"><i class="fas fa-loan me-2"></i>Loan/Benefit </label>
+                                @error('loan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                            </div>
+
+                
+
+                     
+
+                            <!-- <div class="mb-3">
                                 <label class="form-label">Gender</label>
                                 <select class="form-control @error('gender') is-invalid @enderror" name="gender">
                                     <option disabled {{ old('gender', $types->gender) == '' ? 'selected' : '' }}>Select Gender</option>
@@ -66,49 +91,49 @@
                                 @error('gender')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
-                            </div>
+                            </div> -->
 
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label class="form-label">Photo</label>
                                 <input type="file" class="form-control @error('photo') is-invalid @enderror" name="photo" placeholder="Photo" id="image">
                                 @error('photo')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
-                            </div>
+                            </div> -->
 
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label class="form-label">Phone</label>
                                 <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" placeholder="Phone" value="{{ old('phone', $types->phone) }}">
                                 @error('phone')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
-                            </div>
+                            </div> -->
 
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label class="form-label">College</label>
                                 <input type="text" class="form-control @error('collage') is-invalid @enderror" name="collage" placeholder="College" value="{{ old('collage', $types->collage) }}">
                                 @error('collage')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
-                            </div>
-
+                            </div> -->
+<!-- 
                             <div class="mb-3">
                                 <label class="form-label">Department</label>
                                 <input type="text" class="form-control @error('department') is-invalid @enderror" name="department" placeholder="Department" value="{{ old('department', $types->department) }}">
                                 @error('department')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
-                            </div>
+                            </div> -->
 
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label class="form-label">Address</label>
                                 <input type="text" class="form-control @error('address') is-invalid @enderror" name="address" placeholder="Address" value="{{ old('address', $types->address) }}">
                                 @error('address')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
-                            </div>
+                            </div> -->
 
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label class="form-label">Role</label>
                                 <select class="form-control @error('role') is-invalid @enderror" name="role">
                                     <option disabled {{ old('role', $types->role) == '' ? 'selected' : '' }}>Select Role</option>
@@ -121,15 +146,15 @@
                                 @error('role')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
-                            </div>
+                            </div> -->
 
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label class="form-label">Status</label>
                                 <input type="text" class="form-control @error('status') is-invalid @enderror" name="status" placeholder="Status" value="{{ old('status', $types->status) }}">
                                 @error('status')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
-                            </div>
+                            </div> -->
 
                             <button type="submit" class="btn btn-primary me-2">Save Changes</button>
                         </form>

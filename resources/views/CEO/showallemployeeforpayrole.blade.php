@@ -37,8 +37,8 @@
                                     <th style="font-size: 17px; color: white; font-weight: bold;">employment_date</th>
                                     <th style="font-size: 17px; color: white; font-weight: bold;">basic_salary</th>  
                                     <th style="font-size: 17px; color: white; font-weight: bold;">bank_account</th>                                    
-                                    <th style="font-size: 17px; color: white; font-weight: bold;">Status</th>
-                                    <th style="font-size: 17px; color: white; font-weight: bold;">Actions</th>
+                                    <th style="font-size: 17px; color: white; font-weight: bold;">Procced to PayRole</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -54,7 +54,7 @@
                                         <td>{{ $items->basic_salary }}</td>
                                         <td>{{ $items->bank_account }}</td>
                                         <td>
-                                            <form action="{{route('admin.statuschange',$items->id)}}" method="POST">
+                                            <form action="{{ route('admin.editmember', $items->id) }}" method="POST">
                                             @csrf
                                                 @if($items->status==='inactive')
                                                     <input class="btn btn-danger" type="submit" value="{{$items->status}}">
@@ -64,7 +64,7 @@
                                                 @endif
                                             </form>  
                                         </td>
-                                        <td>
+                                        <!-- <td>
                                             <div class="d-flex gap-2">
                                                 <a href="{{ route('admin.editmember', $items->id) }}" 
                                                     class="btn btn-outline-warning btn-sm">
@@ -75,7 +75,7 @@
                                                     <i class="fas fa-trash"></i> Delete
                                                 </a>
                                             </div>
-                                        </td>
+                                        </td> -->
                                     </tr>
                                 @endforeach
                             </tbody>

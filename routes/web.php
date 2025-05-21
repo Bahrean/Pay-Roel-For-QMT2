@@ -71,6 +71,22 @@ Route::middleware(['auth', 'role:CEO'])->group(function () {
     'CeoAddMember',
     ])->name('ceo.register_employee');
 
+    Route::post('/ceo/store', [AdminController::class, 'AdminStore'])->name(
+    'ceo.store'
+    );
+
+    Route::get('/ceo/showmember', [
+        AdminController::class,
+        'AdminShowMember',
+    ])->name('ceo.showregisteredemployee');
+
+    Route::get('/ceo/showallemployeeforpayrole', [
+        AdminController::class,
+        'Adminshowallemployeeforpayrole',
+    ])->name('ceo.showallemployeeforpayrole');
+
+
+
 
 
 
@@ -107,10 +123,7 @@ Route::middleware(['auth', 'role:CEO'])->group(function () {
         AdminController::class,
         'AdminAddMember',
     ])->name('admin.addmember');
-    Route::get('/admin/showmember', [
-        AdminController::class,
-        'AdminShowMember',
-    ])->name('admin.showmember');
+  
     Route::post('/admin/store', [AdminController::class, 'AdminStore'])->name(
         'admin.store'
     );

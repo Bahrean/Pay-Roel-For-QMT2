@@ -68,19 +68,6 @@
                     @error('gender')<div class="invalid-feedback">{{ $message }}</div>@enderror
                 </div>
 
-                <div class="mb-3">
-                    <label class="form-label"><i class="fas fa-user-tag me-2"></i>employment_type</label>
-                    <select class="form-select @error('employment_type') is-invalid @enderror" name="employment_type">
-                        <option value="" selected disabled>Select employment_type</option>
-                        <option value="CFO" {{ old('employment_type') == 'CFO' ? 'selected' : '' }}>CFO</option>
-                        <option value="Part_time" {{ old('employment_type') == 'Part_time' ? 'selected' : '' }}>
-                            Part Time
-                        </option>
-
-                    </select>
-                    @error('employment_type')<div class="invalid-feedback">{{ $message }}</div>@enderror
-                </div>
-
                 <div class="form-floating mb-3 position-relative">
                     <input type="password" class="form-control @error('password') is-invalid @enderror" 
                            id="password" name="password" placeholder=" " style="padding-right: 65px;">
@@ -92,6 +79,21 @@
                     @error('password')<div class="invalid-feedback">{{ $message }}</div>@enderror
                 </div>
 
+                <div class="mb-3">
+                    <label class="form-label"><i class="fas fa-user-tag me-2"></i>employment_type</label>
+                    <select class="form-select @error('employment_type') is-invalid @enderror" name="employment_type">
+                        <option value="" selected disabled>Select employment_type</option>
+                        <option value="Full_time" {{ old('employment_type') == 'Full_time' ? 'selected' : '' }}>Full_time</option>
+                        <option value="Part_time" {{ old('employment_type') == 'Part_time' ? 'selected' : '' }}>
+                            Part Time
+                        </option>
+
+                    </select>
+                    @error('employment_type')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                </div>
+
+
+
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control @error('basic_salary') is-invalid @enderror" 
                            id="basic_salary" name="basic_salary" placeholder=" " value="{{ old('basic_salary') }}">
@@ -102,7 +104,9 @@
             </div>
 
             <!-- Right Column -->
-                <div class="mb-3">
+
+            <div class="col-md-6">
+                                <div class="mb-3">
                     <label class="form-label"><i class="fas fa-user-tag me-2"></i>Role</label>
                     <select class="form-select @error('role') is-invalid @enderror" name="role">
                         <option value="" selected disabled>Select Role</option>CEO','CFO','COO','CTO','CISO','Director','Dept_Lead','Normal_Employee'])->default('Normal_Employee'
@@ -110,60 +114,27 @@
                         <option value="CFO" {{ old('role') == 'collage_dean' ? 'selected' : '' }}>
                             CEO
                         </option>
-                        <option value="collage_registral" {{ old('role') == 'collage_registral' ? 'selected' : '' }}>
-                            College Registrar
+                        <option value="COO" {{ old('role') == 'COO' ? 'selected' : '' }}>
+                            COO
                         </option>
-                        <option value="department_head" {{ old('role') == 'department_head' ? 'selected' : '' }}>
-                            Department Head
+                        <option value="Normal_Employee" {{ old('role') == 'Normal_Employee' ? 'selected' : '' }}>
+                            Normal_Employee
                         </option>
-                        <option value="stuff" {{ old('role') == 'staff' ? 'selected' : '' }}>Stuff</option>
                     </select>
                     @error('role')<div class="invalid-feedback">{{ $message }}</div>@enderror
                 </div>
-            <div class="col-md-6">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control @error('employment_date') is-invalid @enderror" 
+                           id="employment_date" name="employment_date" placeholder=" " value="{{ old('employment_date') }}">
+                    <label for="employment_date"><i class="fas fa-employment_date me-2"></i>employment_date </label>
+                    @error('employment_date')<div class="invalid-feedback">{{ $message }}</div>@enderror
+
+                
                 <div class="form-floating mb-3">
                     <input type="tel" class="form-control @error('bank_account_number') is-invalid @enderror" 
                            id="bank_account_number" name="bank_account_number" placeholder=" " value="{{ old('bank_account_number') }}">
                     <label for="bank_account_number"><i class="fas fa-bank_account_number me-2"></i>bank_account_number </label>
                     @error('bank_account_number')<div class="invalid-feedback">{{ $message }}</div>@enderror
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label"><i class="fas fa-university me-2"></i>College</label>
-                    <select class="form-select @error('college') is-invalid @enderror" 
-                            id="collegeSelect" name="collage" required>
-                        <option value="" selected disabled>Select College</option>
-                        <option value="informatics" {{ old('college') == 'informatics' ? 'selected' : '' }}>
-                            Informatics
-                        </option>
-                        <option value="engineering" {{ old('college') == 'engineering' ? 'selected' : '' }}>
-                            Engineering
-                        </option>
-                    </select>
-                    @error('college')<div class="invalid-feedback">{{ $message }}</div>@enderror
-                </div>
-
-            
-
-
-
-                <div class="mb-3">
-                    <label class="form-label"><i class="fas fa-user-tag me-2"></i>Role</label>
-                    <select class="form-select @error('role') is-invalid @enderror" name="role">
-                        <option value="" selected disabled>Select Role</option>
-                        <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin</option>
-                        <option value="CFO" {{ old('role') == 'collage_dean' ? 'selected' : '' }}>
-                            College Dean
-                        </option>
-                        <option value="collage_registral" {{ old('role') == 'collage_registral' ? 'selected' : '' }}>
-                            College Registrar
-                        </option>
-                        <option value="department_head" {{ old('role') == 'department_head' ? 'selected' : '' }}>
-                            Department Head
-                        </option>
-                        <option value="stuff" {{ old('role') == 'staff' ? 'selected' : '' }}>Stuff</option>
-                    </select>
-                    @error('role')<div class="invalid-feedback">{{ $message }}</div>@enderror
                 </div>
 
                 <div class="mb-3">

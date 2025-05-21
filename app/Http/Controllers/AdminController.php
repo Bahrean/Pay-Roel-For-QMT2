@@ -115,55 +115,49 @@ class AdminController extends Controller
     public function AdminShowMember()
     {
         $types = User::latest()->get();
-        return view('admin.showmember', compact('types'));
+        return view('CEO.showmember', compact('types'));
+    }
+
+    public function Adminshowallemployeeforpayrole()
+    {
+        $types = User::latest()->get();
+        return view('CEO.showallemployeeforpayrole', compact('types'));
     }
 
     public function AdminStore(Request $request)
     {
         $request->validate([
             'name' => 'required|unique:users|max:200',
-            'username' => 'required|unique:users|max:100',
             'email' => 'required|email|unique:users|max:255',
-            'password' => 'required',
             'gender' => 'required|string',
-            'photo' => 'nullable|image',
-            'phone' => 'nullable|string|max:15',
-            'collage' => 'nullable|string|max:100',
-            'department' => 'nullable|string|max:100',
-            'address' => 'nullable|string|max:255',
+            'password' => 'required',
+            'employment_type' => 'required|string|max:50',
             'role' => 'required|string|max:50',
+            'employment_date' => 'required|string|max:50',
+            'basic_salary' => 'required|string|max:50',
+            'bank_account_number' => 'required|string|max:50',
+       
             'status' => 'required|string',
         ]);
 
         // Handle photo upload
-        $photoPath = null;
-        if ($request->hasFile('photo')) {
-            $file = $request->file('photo');
-            $filename = date('YmdHis') . '_' . $file->getClientOriginalName(); // Unique filename
-            $path = public_path('upload/admin_image/');
 
-            // Create directory if it doesn't exist
-            if (!file_exists($path)) {
-                mkdir($path, 0755, true);
-            }
-
-            $file->move($path, $filename);
-            $photoPath = $filename;
-        }
 
         // Create user with photo path
         User::create([
             'name' => $request->name,
-            'username' => $request->username,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+        
             'gender' => $request->gender,
-            'photo' => $photoPath,
-            'phone' => $request->phone,
-            'collage' => $request->collage,
-            'department' => $request->department,
-            'address' => $request->address,
+            'password' => Hash::make($request->password),
+        
+            'employment_type' => $request->employment_type,
             'role' => $request->role,
+            'employment_date' => $request->employment_date,
+            'basic_salary' => $request->basic_salary,
+            'bank_account_number' => $request->bank_account,
+        
+            
             'status' => $request->status,
         ]);
 

@@ -11,7 +11,7 @@ class AgriExpertController extends Controller
 {
     public function AgriExpertDashboard()
     {
-        return view('agri_expert.index');
+        return view('CFO.index');
     }
 
     public function AgriExpertLogout(Request $request)

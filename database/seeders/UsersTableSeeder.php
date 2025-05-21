@@ -16,27 +16,25 @@ class UsersTableSeeder extends Seeder
     public function run(): void
     {
         DB::table('users')->insert([
-            //admin
+            //cto
             [
-                'name' => 'Admin',
-            
-                'email' => 'admin@gmail.com',
+                'name' => 'ceo',
+                'email'=>'ceo@gmail.com',
                 'password' => Hash::make('123456'),
-                'role' => 'admin',
+                'role' => 'CEO',
                 'status' => 'active',
             
             ],
 
-            //Agriculture Expert
+                     //cfo
             [
-                'name' => 'Agriculture Expert',
-                'email' => 'agriexpert@gmail.com',
+                'name' => 'cfo',
+                'email'=>'cfo@gmail.com',
                 'password' => Hash::make('123456'),
-
-                'role' => 'agri_expert',
+                'role' => 'CFO',
                 'status' => 'active',
+            
             ],
-
         ]);
     }
 }

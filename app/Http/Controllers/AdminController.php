@@ -12,7 +12,12 @@ class AdminController extends Controller
 {
     public function AdminDashboard()
     {
-        return view('admin.index');
+        return view('CEO.index');
+    }
+
+    public function CeoAddMember()
+    {
+        return view('CEO.addmember');
     }
 
     public function AdminLogout(Request $request)

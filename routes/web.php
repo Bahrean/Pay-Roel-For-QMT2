@@ -65,7 +65,15 @@ Route::middleware('auth')->group(function () {
 
 });
 
-Route::middleware(['auth', 'role:admin'])->group(function () {
+Route::middleware(['auth', 'role:CEO'])->group(function () {
+    Route::get('/ceo/register_employee', [
+    AdminController::class,
+    'CeoAddMember',
+    ])->name('ceo.register_employee');
+
+
+
+
     Route::get('/admin/dashboard', [
         AdminController::class,
         'AdminDashboard',
@@ -203,41 +211,41 @@ Route::prefix('send-to-buyer')->group(function () {
 
 });
 
-Route::middleware(['auth', 'role:agri_expert'])->group(function () {
-    Route::get('/agri_expert/dashboard', [
+Route::middleware(['auth', 'role:cfo'])->group(function () {
+    Route::get('/cfo/dashboard', [
         AgriExpertController::class,
         'AgriExpertDashboard',
     ])->name('collagedean.dashboard');
-    Route::get('/agri_expert/profile', [
+    Route::get('/cfo/profile', [
         AgriExpertController::class,
         'AgriExpertProfile',
     ])->name('collagedean.profile');
-    Route::get('/agri_expert/chat', [
+    Route::get('/cfo/chat', [
         AgriExpertController::class,
         'AgriExpertChat',
     ])->name('collagedean.chat');
-    Route::get('/agri_expert/logout', [
+    Route::get('/cfo/logout', [
         AgriExpertController::class,
         'AgriExpertLogout',
     ])->name('collagedean.logout');
-    Route::post('/agri_expert/profile/store', [
+    Route::post('/cfo/profile/store', [
         AgriExpertController::class,
         'AgriExpertProfileStore',
     ])->name('collagedean.profile.store');
-    Route::get('/agri_expert/change/password', [
+    Route::get('/cfo/change/password', [
         AgriExpertController::class,
         'AgriExpertChangePassword',
     ])->name('collagedean.change.password');
-    Route::post('/agri_expert/update/password', [
+    Route::post('/cfo/update/password', [
         AgriExpertController::class,
         'AgriExpertUpdatePassword',
     ])->name('collagedean.update.password');
-    Route::get('/agri_expert/showmembers', [
+    Route::get('/cfo/showmembers', [
         AgriExpertController::class,
         'AgriExpertShowMember',
     ])->name('collegedean.showmembers');
 
-    Route::get('/agri_expert/showmembers', [
+    Route::get('/cfo/showmembers', [
         AgriExpertController::class,
         'AgriExpertShowMember',
     ])->name('collegedean.showmembers');

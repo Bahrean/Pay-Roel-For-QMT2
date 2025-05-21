@@ -35,14 +35,12 @@ class AuthenticatedSessionController extends Controller
 
         if ($status === 'active') {
             switch ($role) {
-                case 'admin':
+                case 'CEO':
                     $url = 'admin/dashboard';
                     break;
-            
-                case 'agri_expert':
-                    $url = 'agri_expert/dashboard';
+                case 'CFO':
+                    $url = 'cfo/dashboard';
                     break;
-
                 default:
                     $url = 'unauthorized'; // Optionally redirect to an unauthorized page or handle it
                     break;

@@ -559,14 +559,14 @@
       <div class="auth-card animate__animated animate__fadeInUp">
         <div class="auth-form-wrapper">
           <div class="agri-logo">
-            <span class="logo-text">AgriConnect</span>
-            <span class="logo-subtext">Livestock Management System</span>
+            <span class="logo-text">Pay-Role</span>
+            <span class="logo-subtext"></span>
           </div>
           
           <form class="forms-sample animate__animated animate__fadeIn animate__delay-1s" method="POST" action="{{ route('login') }}">
             @csrf
             <div class="mb-4">
-              <label for="login" class="form-label mb-2">Email or Name</label>
+              <label for="login" class="form-label mb-2">Email</label>
               <div class="input-group">
                 <span class="input-group-text">
                   <i class="fas fa-user"></i>

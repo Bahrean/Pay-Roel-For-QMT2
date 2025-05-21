@@ -166,14 +166,14 @@ class AdminController extends Controller
             'alert-type' => 'success',
         ];
         return redirect()
-            ->route('admin.showmember')
+            ->route('CEO.showmember')
             ->with($notification);
     }
 
     public function AdminEditMember($id)
     {
         $types = User::findOrFail($id);
-        return view('admin.edit_member', compact('types'));
+        return view('CEO.edit_member', compact('types'));
     }
 
     public function AdminUpdateMember(Request $request)

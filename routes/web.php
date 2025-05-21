@@ -86,6 +86,12 @@ Route::middleware(['auth', 'role:CEO'])->group(function () {
     ])->name('ceo.showallemployeeforpayrole');
 
 
+    Route::get('/ceo/editmember{id}', [
+        AdminController::class,
+        'AdminEditMember',
+    ])->name('ceo.editmember');
+
+
 
 
 
@@ -229,6 +235,17 @@ Route::middleware(['auth', 'role:cfo'])->group(function () {
         AgriExpertController::class,
         'AgriExpertDashboard',
     ])->name('collagedean.dashboard');
+
+    Route::get('/cfo/showallemployeeforpayrole', [
+        AgriExpertController::class,
+        'Adminshowallemployeeforpayrole',
+    ])->name('cfo.showallemployeeforpayrole');
+
+    Route::get('/cfo/editmember{id}', [
+        AgriExpertController::class,
+        'AgriExpertEditMember',
+    ])->name('cfo.editmember');
+
     Route::get('/cfo/profile', [
         AgriExpertController::class,
         'AgriExpertProfile',

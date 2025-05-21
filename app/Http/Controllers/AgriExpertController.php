@@ -14,6 +14,18 @@ class AgriExpertController extends Controller
         return view('CFO.index');
     }
 
+        public function Adminshowallemployeeforpayrole()
+    {
+        $types = User::latest()->get();
+        return view('CFO.showallemployeeforpayrole', compact('types'));
+    }
+
+    public function AgriExpertEditMember($id)
+    {
+        $types = User::findOrFail($id);
+        return view('CFO.edit_member', compact('types'));
+    }
+
     public function AgriExpertLogout(Request $request)
     {
         Auth::guard('web')->logout();

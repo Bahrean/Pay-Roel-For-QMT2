@@ -1,5 +1,5 @@
-@extends('CEO.CEO_dashboard')
-@section('CEO')
+@extends('CFO.CFO_dashboard')
+@section('CFO')
 
 <div class="page-content" style="padding: 25px 15px;">
 
@@ -54,7 +54,7 @@
                                         <td>{{ $items->basic_salary }}</td>
                                         <td>{{ $items->bank_account }}</td>
                                         <td>
-                                            <a href="{{ route('admin.editmember', $items->id) }}" 
+                                            <a href="{{ route('cfo.editmember', $items->id) }}" 
                                                     class="btn btn-outline-warning btn-sm">
                                                     <i class="fas fa-edit"></i> Payroll The Employeeser
                                             </a>
